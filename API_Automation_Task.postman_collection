@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e80ee56d-964e-4936-90d0-8d55954804da",
+								"id": "d4c10e7e-1be1-45fa-93a3-77acd4cffb3a",
 								"exec": [
 									"//Test1: To confirm status code\r",
 									"pm.test(\"Status code should be 200\", function () {\r",
@@ -25,8 +25,10 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"//Test3: To confirm a variable\r",
-									"pm.variables.get(\"status\");\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Task 1\");\r",
+									"});\r",
 									""
 								],
 								"type": "text/javascript"
@@ -65,9 +67,9 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"//Test3: To confirm body response\r",
-									"pm.test(\"Body response has a content\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congratulations the installation of Fusio was successful\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -104,9 +106,9 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"//Test3: To confirm body response\r",
-									"pm.test(\"Body response has a content\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Task 3\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -151,17 +153,17 @@
 								"id": "ed805a48-e2ac-4ee8-94d8-ca62e2c71efa",
 								"exec": [
 									"//Test1: To confirm status code\r",
-									"pm.test(\"Status code should be 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code should be 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
 									"});\r",
 									"//Test2: To confirm status code has the right string\r",
-									"pm.test(\"Status code name has OK has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
+									"pm.test(\"Status code name has Internal Server Error as string\", function () {\r",
+									"    pm.response.to.have.status(\"Internal Server Error\");\r",
 									"});\r",
 									"\r",
-									"//Test3: To confirm body response\r",
-									"pm.test(\"Body response has a content\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"In demo not possible\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -208,17 +210,17 @@
 								"id": "a37a2aef-45f8-4527-9c0f-758128449268",
 								"exec": [
 									"//Test1: To confirm status code\r",
-									"pm.test(\"Status code should be 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code should be 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
 									"});\r",
 									"//Test2: To confirm status code has the right string\r",
-									"pm.test(\"Status code name has OK has string\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
+									"pm.test(\"Status code name has Internal Server Error as string\", function () {\r",
+									"    pm.response.to.have.status(\"Internal Server Error\");\r",
 									"});\r",
 									"\r",
 									"//Test3: To confirm body response\r",
 									"pm.test(\"Body response has a content\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Internal Server Error\");\r",
 									"});"
 								],
 								"type": "text/javascript"
